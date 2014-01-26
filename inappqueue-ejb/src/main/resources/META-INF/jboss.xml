@@ -3,6 +3,16 @@
     <enterprise-beans>
         <message-driven>
             <ejb-name>MessageReceiverBean</ejb-name>
+            <activation-config>
+                <activation-config-property>
+                    <activation-config-property-name>destinationType</activation-config-property-name>
+                    <activation-config-property-value>javax.jms.Queue</activation-config-property-value>
+                </activation-config-property>
+                <activation-config-property>
+                    <activation-config-property-name>destination</activation-config-property-name>
+                    <activation-config-property-value>queue/InAppQueue</activation-config-property-value>
+                </activation-config-property>
+            </activation-config>
             <depends>jboss.mq.destination:service=Queue,name=InAppQueue</depends>
         </message-driven>
     </enterprise-beans>
