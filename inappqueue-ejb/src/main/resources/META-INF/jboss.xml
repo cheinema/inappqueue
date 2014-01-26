@@ -3,7 +3,7 @@
     <enterprise-beans>
         <message-driven>
             <ejb-name>MessageReceiverBean</ejb-name>
-            <create-destination>true</create-destination>
+            <depends>jboss.mq.destination:service=Queue,name=InAppQueue</depends>
         </message-driven>
     </enterprise-beans>
 </jboss>
